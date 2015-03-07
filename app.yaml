@@ -1,0 +1,42 @@
+application: salman-wahed
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+handlers:
+- url: /css
+  static_dir: blog/css
+
+- url: /js
+  static_dir: blog/js
+
+- url: /fonts
+  static_dir: blog/fonts
+
+- url: /font-awesome-4.2.0
+  static_dir: blog/font-awesome-4.2.0
+
+- url: /font-awesome-4.1.0
+  static_dir: blog/font-awesome-4.2.0
+
+- url: /less
+  static_dir: blog/less
+
+- url: /img
+  static_dir: blog/img
+
+- url: /.*
+  script: views.application
+
+- url: /favicon.ico
+  mime_type: image/vnd.microsoft.icon
+  static_files: /favicon.ico
+  upload: /favicon.ico
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
